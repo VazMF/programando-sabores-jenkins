@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Passo 1: Checkout do repositório Git
-                git 'https://github.com/seu-usuario/seu-repositorio.git'
+                git 'https://github.com/VazMF/programando-sabores-jenkins'
             }
         }
 
