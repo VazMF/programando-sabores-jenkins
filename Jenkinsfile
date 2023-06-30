@@ -25,8 +25,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                // Passo 4: Implantação do blog no GitHub Pages
-                sh 'peaceiris/actions-gh-pages@v3'
+                sh 'https://github.com/VazMF/programando-sabores-jenkins'
+                sh 'cp -R pasta-do-seu-blog/* seu-repositorio/'
+                dir('seu-repositorio') {
+                    sh 'git add .'
+                    sh 'git commit -m "Atualizando blog"'
+                    sh 'git push origin master'
+                }
             }
         }
 
