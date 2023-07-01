@@ -9,7 +9,6 @@ pipeline {
             }
         }
 
-
         stage('Build') {
             steps {
                 // Passo 3: Executar o build do blog com o Hugo
@@ -26,13 +25,12 @@ pipeline {
         }
             }
         }
-
     }
-    post{
-        always{
-            mail to: "maria.romero@edu.unifil.br",
-            subject: "Notificação de Pipeline - Programando Sabores",
-            body: "A pipeline do blog foi concluída com sucesso!"
+    post {
+        always {
+            mail to: 'maria.romero@edu.unifil.br',
+            subject: 'Notificação de Pipeline - Programando Sabores',
+            body: 'A pipeline do blog foi concluída com sucesso!'
         }
     }
 }
